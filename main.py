@@ -5,9 +5,15 @@ import json
 import logging
 import datetime, time
 import paho.mqtt.client as mqtt
+import coloredlogs
 #from paho import client as client
 
-logging.basicConfig(format='%(levelname)s: %(message)s', level=logging.DEBUG)
+logging.basicConfig(level=logging.DEBUG)  # base config
+coloredlogs.install(
+    level=logging.DEBUG,
+    fmt="%(asctime)s %(levelname)s %(name)s: %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+)
 
 
 
